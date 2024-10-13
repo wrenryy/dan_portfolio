@@ -1,0 +1,193 @@
+  .navigation_checkbox {
+      display: none;
+  }
+  
+  .navigation_button {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      height: 5rem;
+      width: 5rem;
+      text-align: center;
+      background-color: $white;
+      border-radius: 50%;
+      z-index: 300;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+  }
+  
+  @media screen  and (min-width: 768px) {
+      .navigation_button {
+          top: 4rem;
+          right: 4rem;
+          height: 7rem;
+          width: 7rem;
+      }
+  }
+  
+  .navigation_background {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      background: $color-primary;
+      background-size: cover;
+      background-position: center;
+      z-index: 100;
+      transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+  @media screen and (min-width: 768px) {
+      .navigation_background {
+          top: 4.5rem;
+          right: 4.5rem;
+          height: 6rem;
+          width: 6rem;
+      }
+  }
+  
+  .navigation_nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      opacity: 0;
+      width: 0;
+      visibility: hidden;
+      z-index: 200;
+      transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .navigation_list {
+      /*@include center;*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+      list-style: none;
+  }
+  
+  .navigation_item {
+      margin: 1rem;
+  }
+  
+  .navigation_link:link,
+  .navigation_link:visited {
+      display: inline-block;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 2.4rem;
+      text-decoration: none;
+      transition: all .2s;
+  }
+  
+  @media(min-width: 768px) {
+      .navigation_link:link,
+      .navigation_link:visited {
+          font-size: 3.8rem;
+      }
+  }
+  
+  .navigation_link span {
+      margin-right: 1.5rem;
+      display: inline-block;
+  }
+  
+  .navigation_link:hover {
+      color: $white;
+      transform: scale(1.1);
+  }
+  
+  .navigation_checkbox:checked~.navigation_background {
+      transform: scale(80)
+  }
+  
+  .navigation_checkbox:checked~.navigation_nav {
+      width: 100%;
+      visibility: visible;
+      opacity: 1;
+  }
+  
+  .navigation_icon {
+  
+      position: relative;
+      margin-top: 2.5rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+      .navigation_icon {
+          margin-top: 3.5rem;
+      }
+  }
+  
+  .navigation_icon,
+  .navigation_icon::before,
+  .navigation_icon::after {
+      display: inline-block;
+      width: 2.2rem;
+      height: 2px;
+      background-color: $color-primary;
+  }
+  
+  @media (min-width: 768px) {
+      .navigation_icon,
+      .navigation_icon::before,
+      .navigation_icon::after {
+          width: 3rem;
+      }
+  }
+  
+  .navigation_icon::before,
+  .navigation_icon::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 200ms;
+  }
+  
+  .navigation_icon::before {
+      top: -.8rem;
+  }
+  
+  .navigation_icon::after {
+      top: .8rem;
+  }
+  
+  .navigation_button:hover .navigation_icon::before {
+      top: -1rem;
+  }
+  
+  .navigation_button:hover .navigation_icon::after {
+      top: 1rem;
+  }
+  
+  .navigation_checkbox:checked+.navigation_button .navigation_icon {
+      background-color: transparent;
+  }
+  
+  .navigation_checkbox:checked+.navigation_button .navigation_icon::before {
+      top: 0;
+      transform: rotate(135deg);
+  }
+  
+  .navigation_checkbox:checked+.navigation_button .navigation_icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+  }
+  
+  
+  
+  /*-----------------------*/
+  #by {
+    font-family: 'Arima Madurai', cursive;
+    color: $color-primary;
+    font-size: 10px;
+    position: absolute;
+    top: 22%;
+    right: 2.5%; 
+  }

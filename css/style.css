@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.preloader {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  visibility: visible;
+  z-index: 1;
+  transition: opacity 0.3s, visibility 0.3s;
+  background: #344E41;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+svg.coffee {
+  --secondary: #fff;
+}
+svg.coffee #steamL {
+  stroke-dasharray: 13;
+  stroke-dashoffset: 13;
+  -webkit-animation: steamLarge 2s infinite;
+          animation: steamLarge 2s infinite;
+}
+svg.coffee #steamR {
+  stroke-dasharray: 9;
+  stroke-dashoffset: 9;
+  -webkit-animation: steamSmall 2s infinite;
+          animation: steamSmall 2s infinite;
+}
+svg.coffee #preloaderText {
+  font: bold 12px sans-serif;
+}
+
+@-webkit-keyframes steamLarge {
+  from {
+    left: 0%;
+    stroke-dashoffset: 13;
+    opacity: 0.6;
+  }
+  to {
+    left: 100%;
+    stroke-dashoffset: 39;
+    opacity: 0;
+  }
+}
+
+@keyframes steamLarge {
+  from {
+    left: 0%;
+    stroke-dashoffset: 13;
+    opacity: 0.6;
+  }
+  to {
+    left: 100%;
+    stroke-dashoffset: 39;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes steamSmall {
+  from {
+    left: 10%;
+    stroke-dashoffset: 9;
+    opacity: 0.6;
+  }
+  to {
+    left: 80;
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+  to {
+    left: 100%;
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+}
+@keyframes steamSmall {
+  from {
+    left: 10%;
+    stroke-dashoffset: 9;
+    opacity: 0.6;
+  }
+  to {
+    left: 80;
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+  to {
+    left: 100%;
+    stroke-dashoffset: 27;
+    opacity: 0;
+  }
+}
+.main-content {
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.hover,
+.word,
+h1 {
+  cursor: pointer;
+}
+
+h1 {
+  position: relative;
+  color: #fff;
+  font: 900 60px Montserrat;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: #fff;
+  font: Montserrat;
+}
+
+.intro {
+  position: relative;
+  padding: 5em;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: center;
+}
+.intro:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(rgba(0, 0, 0, 0.3), transparent);
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.intro:hover:before {
+  opacity: 0.5;
+}
+
+.intro-one {
+  display: grid;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  padding: 8em;
+  background: url("https://assets.codepen.io/1149983/gaetan-meyer-WemqIKiduMo-unsplash+%281%29+%281%29.jpg") no-repeat center center/cover;
+}
+.intro-one h1, .intro-one h2 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -30px;
+  transition: 0.5s ease;
+  z-index: 0;
+  letter-spacing: 25px;
+}
+.intro-one h2 {
+  top: 60%;
+}
+.intro-one .intro-hover {
+  z-index: 1;
+}
+.intro-one .intro-hover-1:hover ~ h1 {
+  left: 30px;
+  margin-top: -10px;
+}
+.intro-one .intro-hover-2:hover ~ h1 {
+  margin-top: -10px;
+}
+.intro-one .intro-hover-3:hover ~ h1 {
+  right: 30px;
+  margin-top: -10px;
+}
+.intro-one .intro-hover-4:hover ~ h1 {
+  left: 30px;
+}
+.intro-one .intro-hover-6:hover ~ h1 {
+  right: 30px;
+}
+.intro-one .intro-hover-7:hover ~ h1 {
+  left: 30px;
+  margin-top: -50px;
+}
+.intro-one .intro-hover-8:hover ~ h1 {
+  margin-top: -50px;
+}
+.intro-one .intro-hover-9:hover ~ h1 {
+  right: 30px;
+  margin-top: -50px;
+}
+
+.topContainer {
+  width: 100%;
+  min-height: calc(100vh + 9.1666666667vw);
+}
+
+.topContainer:not(:last-child) * {
+  margin-top: -4.1666666667vw;
+}
+
+.topContainer:last-child {
+  position: relative;
+  transform: skew(0);
+  margin-top: -8.3333333333vw;
+  padding-top: 8.3333333333vw;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.navigation_checkbox {
+  display: none;
+}
+
+.navigation_button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 300;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation_button {
+    top: 4rem;
+    right: 4rem;
+    height: 7rem;
+    width: 7rem;
+  }
+}
+.navigation_background {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: #344E41;
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+  transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .navigation_background {
+    top: 4.5rem;
+    right: 4.5rem;
+    height: 6rem;
+    width: 6rem;
+  }
+}
+.navigation_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  opacity: 0;
+  width: 0;
+  visibility: hidden;
+  z-index: 200;
+  transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation_list {
+  /*@include center;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  list-style: none;
+}
+
+.navigation_item {
+  margin: 1rem;
+}
+
+.navigation_link:link,
+.navigation_link:visited {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2.4rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+@media (min-width: 768px) {
+  .navigation_link:link,
+.navigation_link:visited {
+    font-size: 3.8rem;
+  }
+}
+.navigation_link span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.navigation_link:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.navigation_checkbox:checked ~ .navigation_background {
+  transform: scale(80);
+}
+
+.navigation_checkbox:checked ~ .navigation_nav {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.navigation_icon {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation_icon {
+    margin-top: 3.5rem;
+  }
+}
+.navigation_icon,
+.navigation_icon::before,
+.navigation_icon::after {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2px;
+  background-color: #344E41;
+}
+
+@media (min-width: 768px) {
+  .navigation_icon,
+.navigation_icon::before,
+.navigation_icon::after {
+    width: 3rem;
+  }
+}
+.navigation_icon::before,
+.navigation_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 200ms;
+}
+
+.navigation_icon::before {
+  top: -0.8rem;
+}
+
+.navigation_icon::after {
+  top: 0.8rem;
+}
+
+.navigation_button:hover .navigation_icon::before {
+  top: -1rem;
+}
+
+.navigation_button:hover .navigation_icon::after {
+  top: 1rem;
+}
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon {
+  background-color: transparent;
+}
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navigation_checkbox:checked + .navigation_button .navigation_icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+/*-----------------------*/
+#by {
+  font-family: "Arima Madurai", cursive;
+  color: #344E41;
+  font-size: 10px;
+  position: absolute;
+  top: 22%;
+  right: 2.5%;
+}/*# sourceMappingURL=style.css.map */

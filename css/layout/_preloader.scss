@@ -1,0 +1,72 @@
+.preloader {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+	visibility: visible;
+	z-index: 1;
+	transition: opacity 0.3s, visibility 0.3s;
+    background: $color-primary;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+svg {
+	&.coffee {
+		--secondary: #fff;
+
+		#steamL {
+			stroke-dasharray: 13;
+			stroke-dashoffset: 13;
+			animation: steamLarge 2s infinite;
+		}
+
+		#steamR {
+			stroke-dasharray: 9;
+			stroke-dashoffset: 9;
+			animation: steamSmall 2s infinite;
+		}
+
+        #preloaderText {
+            font: bold 12px sans-serif;
+        }
+	}
+}
+
+@keyframes steamLarge {
+	from {
+		left: 0%;
+		stroke-dashoffset: 13;
+		opacity: .6;
+	}
+
+	to {
+		left: 100%;
+		stroke-dashoffset: 39;
+		opacity: 0;
+	}
+}
+
+
+@keyframes steamSmall {
+	from {
+		left: 10%;
+		stroke-dashoffset: 9;
+		opacity: .6;
+	}
+
+	to {
+		left: 80;
+		stroke-dashoffset: 27;
+		opacity: 0;
+	}
+
+	to {
+		left: 100%;
+		stroke-dashoffset: 27;
+		opacity: 0;
+	
+	}
+}
